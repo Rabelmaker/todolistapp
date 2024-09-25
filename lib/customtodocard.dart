@@ -20,7 +20,6 @@ class CustomTodoCard extends StatelessWidget {
     this.onChanged,
   });
 
-  // Fungsi untuk menentukan warna tag berdasarkan teks
   Color _getTagColor(String tag) {
     switch (tag) {
       case 'Completed':
@@ -51,27 +50,24 @@ class CustomTodoCard extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Indicator di samping kiri
                 Container(
                   width: 5,
                   height: 60,
                   decoration: BoxDecoration(
-                    color: isCompleted ? Colors.green : initialColor, // Warna berdasarkan status
+                    color: isCompleted ? Colors.green : initialColor,
                     borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(12),
                       bottomLeft: Radius.circular(12),
                     ),
                   ),
                 ),
-                const SizedBox(width: 10), // Spasi antara indikator dan checkbox
-                // Checkbox
+                const SizedBox(width: 10),
                 Checkbox(
                   value: isCompleted,
                   onChanged: onChanged,
                   activeColor: Colors.green,
                 ),
-                const SizedBox(width: 10), // Spasi antara checkbox dan teks
-                // Kolom teks (judul dan deskripsi)
+                const SizedBox(width: 10),
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,7 +98,6 @@ class CustomTodoCard extends StatelessWidget {
                 ),
               ],
             ),
-            // Tag di pojok kanan atas
             Positioned(
               top: 0,
               right: 0,
@@ -145,5 +140,3 @@ class CustomTodoCard extends StatelessWidget {
     );
   }
 }
-
-
